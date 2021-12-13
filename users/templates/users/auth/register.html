@@ -1,1 +1,10 @@
 {% extends "users/base/base.html" %}
+{% block title %} Register {% endblock title %}
+{% block content %}
+<form method="POST">
+	{% csrf_token %}
+	{{form}}
+	<hr>
+	<button type="submit">Sign Up</button>
+</form>
+{% endblock content %}

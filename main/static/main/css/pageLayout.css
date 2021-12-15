@@ -1,3 +1,17 @@
+*{
+	box-sizing: border-box;
+}
+
+header, main, footer {
+      padding-left: 300px;
+    }
+
+    @media only screen and (max-width : 992px) {
+      header, main, footer {
+        padding-left: 0;
+      }
+    }
+
 .bx-menu{
 	font-size: 24px;
 	margin: 8px;
@@ -8,4 +22,9 @@
 }
 
 .hamburger{
+}
+
+.page{
+	display: flex;
+	flex-direction: row;
 }

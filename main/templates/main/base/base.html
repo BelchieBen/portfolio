@@ -32,13 +32,13 @@
 	        <img src="/media/images/profiles/background.jpg">
 	      </div>
 	      {% if user.is_authenticated %}
-	      <a href="#user"><img class="circle" src="/media/images/profiles/profile.png"></a>
-	      <a href="#name"><span class="white-text name">{{user.first_name}} {{user.last_name}}</span></a>
-	      <a href="#email"><span class="white-text email">{{user.email}}</span></a>
+		      <a href="#user"><img class="circle" src="/media/images/profiles/profile.png"></a>
+		      <a href="#name"><span class="white-text name">{{user.first_name}} {{user.last_name}}</span></a>
+		      <a href="#email"><span class="white-text email">{{user.email}}</span></a>
 	      {% else %}
-	      <a href="#user"><img class="circle" src="/media/images/profiles/profile.png"></a>
-	      <a href="#name"><span class="white-text name">Your Name</span></a>
-	      <a href="#email"><span class="white-text email">Your Email</span></a>
+		      <a href="#user"><img class="circle" src="/media/images/profiles/profile.png"></a>
+		      <a href="#name"><span class="white-text name">Your Name</span></a>
+		      <a href="#email"><span class="white-text email">Your Email</span></a>
 	      {% endif %}
 	    </div></li>
 	    <!-- <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
@@ -46,12 +46,18 @@
 	    <li><div class="divider"></div></li>
 	    <li><a class="subheader">Subheader</a></li> -->
 	    <li><a class="waves-effect" href="{% url 'home' %}">Home</a></li>
-	    <li><a class="waves-effect" href="{% url 'register' %}">Create an account</a></li>
+	    {% if user.is_authenticated %}
+		    <li><a class="waves-effect" href="{% url 'logout' %}">Logout</a></li>
+	    {% else %}
+	     	<li><a class="waves-effect" href="{% url 'register' %}">Create an account</a></li>
+		    <li><a class="waves-effect" href="{% url 'login' %}">Log In</a></li>
+	    {% endif %}
   	</ul>
-	
-	<div>
-		{% block content %}
-		{% endblock content %}
-	</div>
+	<main>
+		<div class="grid">
+			{% block content %}
+			{% endblock content %}
+		</div>
+	</main>
 </body>
 </html>

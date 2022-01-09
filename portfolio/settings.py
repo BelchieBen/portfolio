@@ -35,6 +35,7 @@ ALLOWED_HOSTS = ['bens-portfolio-web.herokuapp.com']
 INSTALLED_APPS = [
     'main',
     'users',
+    'frontend',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

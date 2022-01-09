@@ -2,15 +2,28 @@
 	box-sizing: border-box;
 }
 
-header, main, footer {
-      padding-left: 300px;
-    }
+html{
+	width: 100vw;
+}
 
-    @media only screen and (max-width : 992px) {
-      header, main, footer {
-        padding-left: 0;
-      }
-    }
+header, main, footer {
+  padding-left: 300px;
+}
+
+@media only screen and (max-width : 992px) {
+	html{
+		width: 100vw;
+	}
+	
+  header, main, footer {
+    padding-left: 0;
+  }
+
+  .homepageSearch{
+  	margin-left: 5rem;
+		margin-right: 5rem;
+  }
+}
 
 .bx-menu{
 	font-size: 24px;
@@ -27,4 +40,15 @@ header, main, footer {
 .page{
 	display: flex;
 	flex-direction: row;
+}
+
+.row{
+	display: flex;
+	flex-direction: row;
+}
+
+.homepageSearch{
+	margin-left: 25rem;
+	margin-right: 25rem;
+	flex: 100%;
 }

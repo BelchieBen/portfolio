@@ -6,10 +6,9 @@
   	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 	<title>{% block title %}{% endblock title %}</title>
 	
+	<!-- Custom CSS -->
 	<link rel="stylesheet" type="text/css" href="{% static 'main/css/pageLayout.css' %}">
-
-	<!-- Materialize css -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+	<link rel="stylesheet" type="text/css" href="{% static 'main/css/forms.css' %}">
 
 	<!-- JavaScript Files -->
 	<script type="text/javascript" src="{% static 'main/js/sidebar.js' %}"></script>
@@ -20,13 +19,13 @@
 	<!-- JQuery -->
 	<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
 
-	<!-- Materialize JS -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-
 </head>
 <body>
-	<a href="#" data-target="slide-out" class="sidenav-trigger hamburger"><i class='bx bx-menu'></i></a>
-  	<ul id="slide-out" class="sidenav sidenav-fixed">
+	<div class="row">
+		<input type="text" name="searchbar" placeholder="Search" class="homepageSearch">
+		<a href="#" data-target="slide-out" class="sidenav-trigger hamburger"><i class='bx bx-menu'></i></a>
+	</div>
+  	<!-- <ul id="slide-out" class="sidenav sidenav">
 	    <li><div class="user-view">
 	      <div class="background">
 	        <img src="/media/images/profiles/background.jpg">
@@ -41,10 +40,10 @@
 		      <a href="#email"><span class="white-text email">Your Email</span></a>
 	      {% endif %}
 	    </div></li>
-	    <!-- <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
+	     <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
 	    <li><a href="#!">Second Link</a></li>
 	    <li><div class="divider"></div></li>
-	    <li><a class="subheader">Subheader</a></li> -->
+	    <li><a class="subheader">Subheader</a></li> 
 	    <li><a class="waves-effect" href="{% url 'home' %}">Home</a></li>
 	    {% if user.is_authenticated %}
 		    <li><a class="waves-effect" href="{% url 'logout' %}">Logout</a></li>
@@ -52,7 +51,7 @@
 	     	<li><a class="waves-effect" href="{% url 'register' %}">Create an account</a></li>
 		    <li><a class="waves-effect" href="{% url 'login' %}">Log In</a></li>
 	    {% endif %}
-  	</ul>
+  	</ul> -->
 	<main>
 		<div class="grid">
 			{% block content %}

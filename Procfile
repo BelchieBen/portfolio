@@ -1,2 +1,2 @@
-release: npm run dev
+release: python manage.py migrate
 web: gunicorn portfolio.wsgi
